@@ -1,0 +1,22 @@
+<form action = "/create">
+  <input type = "hidden" name = "email" value = "<%= session[:email]%>">
+  <textarea name = "content" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="내용을 넣어주세요"></textarea>
+  <input type = "submit" value = "보내기" button type="button" class="btn btn-success"></button>
+</form>
+
+
+<%@tweets.reverse.each do |t| %>
+    <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= t.email%></h5>
+        <p class="card-text"><%=t.content%></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+      <div class="card-footer text-muted">
+        2 days ago
+      </div>
+    </div>
+<%end%>
